@@ -1,0 +1,14 @@
+name: Frontend CI
+
+on:
+  push:
+    paths:
+      - 'frontend/**'
+    branches:
+      - master
+
+jobs:
+  lint-and-test:
+    uses: ./.github/workflows/lint-and-test.yaml
+    with:
+      working-directory: frontend

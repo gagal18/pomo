@@ -1,0 +1,14 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+    branches:
+      - master
+
+jobs:
+  lint-and-test:
+    uses: ./.github/workflows/lint-and-test.yaml
+    with:
+      working-directory: backend
