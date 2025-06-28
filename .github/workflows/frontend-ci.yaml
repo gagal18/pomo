@@ -8,10 +8,10 @@ on:
       - master
 
 jobs:
-  # lint-and-test:
-  #   uses: ./.github/workflows/lint-and-test.yaml
-  #   with:
-  #     dir: frontend
+  lint-and-test:
+    uses: ./.github/workflows/lint-and-test.yaml
+    with:
+      dir: frontend
 
   build-and-push:
     uses: ./.github/workflows/build-and-push.yaml

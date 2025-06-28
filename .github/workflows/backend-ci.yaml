@@ -17,7 +17,8 @@ jobs:
     with:
       dockerhub_repo: gagal1818/pomo-backend
       default_branch: master
-      dir: ./backend/ci
+      file: ./backend/ci/Dockerfile
+      dir: ./backend
     secrets:
       dockerhub_username: ${{ secrets.DO_HUB_USER }}
       dockerhub_password: ${{ secrets.DO_HUB_PW }}
