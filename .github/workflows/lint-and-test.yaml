@@ -3,7 +3,7 @@ name: Lint and Test Reusable
 on:
   workflow_call:
     inputs:
-      working-directory:
+      dir:
         required: true
         type: string
 
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ${{ inputs.working-directory }}
+        working-directory: ${{ inputs.dir }}
 
     steps:
       - uses: actions/checkout@v4

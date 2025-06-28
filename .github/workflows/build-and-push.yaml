@@ -10,6 +10,10 @@ on:
         required: false
         type: string
         default: master
+      dir:
+        required: false
+        type: string
+        default: master 
 
     secrets:
       gh_token:
@@ -59,6 +63,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ inputs.dir }}
           push: true
           tags: ${{ inputs.dockerhub_repo }}:${{ env.TAG }}

@@ -11,12 +11,13 @@ jobs:
   lint-and-test:
     uses: ./.github/workflows/lint-and-test.yaml
     with:
-      working-directory: backend
+      dir: backend
   build-and-push:
     uses: ./.github/workflows/build-and-push.yaml
     with:
       dockerhub_repo: gagal1818/pomo-backend
       default_branch: master
+      dir: ./frontend/ci
     secrets:
       dockerhub_username: ${{ secrets.DO_HUB_USER }}
       dockerhub_password: ${{ secrets.DO_HUB_PW }}
