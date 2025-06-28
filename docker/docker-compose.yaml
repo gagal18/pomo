@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    extends:
+      file: ../frontend/ci/docker-compose.yaml
+      service: frontend
+    networks:
+      - pomo-network
+
+  backend:
+    extends:
+      file: ../backend/ci/docker-compose.yaml
+      service: backend
+    networks:
+      - pomo-network
+
+  db:
+    extends:
+      file: ../backend/ci/docker-compose.yaml
+      service: db
+    networks:
+      - pomo-network
+
+volumes:
+  db-data:
+
+networks:
+  pomo-network:
+    driver: bridge
