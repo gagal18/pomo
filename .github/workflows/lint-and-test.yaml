@@ -1,0 +1,32 @@
+name: Lint and Test Reusable
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        required: true
+        type: string
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Linter
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm run test
