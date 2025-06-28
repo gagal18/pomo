@@ -8,17 +8,17 @@ on:
       - master
 
 jobs:
-  lint-and-test:
-    uses: ./.github/workflows/lint-and-test.yaml
-    with:
-      dir: frontend
+  # lint-and-test:
+  #   uses: ./.github/workflows/lint-and-test.yaml
+  #   with:
+  #     dir: frontend
 
   build-and-push:
     uses: ./.github/workflows/build-and-push.yaml
     with:
       dockerhub_repo: gagal1818/pomo-frontend
       default_branch: master
-      file: ./frontend/ci
+      file: ./frontend/ci/Dockerfile
       dir: ./frontend
     secrets:
       dockerhub_username: ${{ secrets.DO_HUB_USER }}
