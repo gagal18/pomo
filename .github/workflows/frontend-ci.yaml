@@ -18,7 +18,8 @@ jobs:
     with:
       dockerhub_repo: gagal1818/pomo-frontend
       default_branch: master
-      dir: ./frontend/ci
+      file: ./frontend/ci
+      dir: ./frontend
     secrets:
       dockerhub_username: ${{ secrets.DO_HUB_USER }}
       dockerhub_password: ${{ secrets.DO_HUB_PW }}

@@ -14,6 +14,10 @@ on:
         required: false
         type: string
         default: master 
+      file:
+        required: false
+        type: string
+        default: master 
 
     secrets:
       gh_token:
@@ -64,5 +68,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ inputs.dir }}
+          file: ${{ inputs.file }}
           push: true
           tags: ${{ inputs.dockerhub_repo }}:${{ env.TAG }}
