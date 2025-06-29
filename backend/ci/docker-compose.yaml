@@ -16,7 +16,7 @@ services:
     image: postgres:15
     restart: always
     environment:
-      POSTGRES_DB: myapp
+      POSTGRES_DB: pomo
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:

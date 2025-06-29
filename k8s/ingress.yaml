@@ -4,16 +4,23 @@ metadata:
   name: ingress
   namespace: pomo
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
   - host: 37.60.228.149.nip.io
     http:
       paths:
-      - path: /
+      - path: /()(.*)
         pathType: Prefix
         backend:
           service:
             name: frontend
+            port:
+              number: 80
+      - path: /api(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: backend
             port:
               number: 80
