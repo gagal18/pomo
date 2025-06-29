@@ -10,7 +10,7 @@ spec:
   - host: 37.60.228.149.nip.io
     http:
       paths:
-      - path: /()(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
