@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gagal1818/pomo-frontend:latest
+        image: gagal1818/pomo-frontend:6be8d7
         ports:
         - containerPort: 80
         readinessProbe:
