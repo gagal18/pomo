@@ -17,7 +17,7 @@ spec:
       - name: backend
         image: gagal1818/pomo-backend:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 3000     
         env:
         - name: DB_HOST
           value: postgres
