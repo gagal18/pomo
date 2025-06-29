@@ -70,4 +70,6 @@ jobs:
           context: ${{ inputs.dir }}
           file: ${{ inputs.file }}
           push: true
-          tags: ${{ inputs.dockerhub_repo }}:${{ env.TAG }}
+          tags: |
+            ${{ inputs.dockerhub_repo }}:${{ env.TAG }}
+            ${{ inputs.dockerhub_repo }}:latest
