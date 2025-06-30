@@ -16,6 +16,7 @@ spec:
       containers:
       - name: frontend
         image: gagal1818/pomo-frontend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         readinessProbe:

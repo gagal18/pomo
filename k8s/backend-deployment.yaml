@@ -16,6 +16,7 @@ spec:
       containers:
       - name: backend
         image: gagal1818/pomo-backend:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000     
         env:
